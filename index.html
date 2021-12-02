@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Social proof section</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+      :root {
+        /* Primary */
+        --dark-magneta: hsl(300, 43%, 22%);
+        --soft-pink: hsl(333, 80%, 67%);
+
+        /* Neutral */
+        --dark-gray-magenta: hsl(303, 10%, 53%);
+        --light-gray-magenta: hsl(300, 24%, 96%);
+        --white: hsl(0, 0%, 100%);
+
+        /* font weight */
+        --fw-regular: 400;
+        --fw-bold: 500;
+        --fw-exbold: 700;
+
+        --border-radius: 10px;
+      }
+
+      html {
+        font-size: 100%;
+        box-sizing: border-box;
+        font-family: "Spartan", sans-serif;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+      }
+
+      body {
+        min-height: 100vh;
+        background: no-repeat url("images/bg-pattern-top-mobile.svg"),
+          no-repeat url("images/bg-pattern-bottom-mobile.svg") bottom right;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .container {
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      section + section {
+        margin-top: 3rem;
+      }
+
+      .intro {
+        text-align: center;
+      }
+
+      .intro h2 {
+        padding-inline: 2rem;
+        font-size: 22px;
+        font-weight: var(--fw-exbold);
+        color: var(--dark-magneta);
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      .intro p {
+        line-height: 1.5;
+        font-size: 12px;
+        font-weight: var(--fw-bold);
+        color: var(--dark-gray-magenta);
+      }
+
+      .item + .item {
+        margin-top: 1rem;
+      }
+
+      .star-sec {
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .star-sec .item {
+        background-color: var(--light-gray-magenta);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+      }
+
+      .star-sec .star-group {
+        margin-bottom: 0.5rem;
+      }
+
+      .star-sec h4 {
+        font-weight: var(--fw-exbold);
+      }
+
+      .comment-sec .item {
+        background-color: var(--dark-magneta);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+      }
+
+      .comment-sec .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .picture {
+        width: 20%;
+        border-radius: 50%;
+      }
+
+      .info {
+        flex-grow: 1;
+        font-size: 12px;
+        line-height: 1.5;
+        margin-left: 1rem;
+      }
+
+      .name,
+      .comment {
+        color: var(--light-gray-magenta);
+      }
+
+      .id {
+        color: var(--soft-pink);
+        opacity: 0.7;
+      }
+
+      .comment {
+        opacity: 0.9;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      @media screen and (min-width: 376px) {
+        body {
+          min-height: 100vh;
+          background: no-repeat url("images/bg-pattern-top-desktop.svg"),
+            no-repeat url("/images/bg-pattern-bottom-desktop.svg") bottom right;
+        }
+        .container {
+          width: 80%;
+          max-width: 960px;
+          display: grid;
+          grid-template-columns: 47% 53%;
+        }
+
+        .star-sec,
+        .comment-sec .item + .item {
+          margin-top: 0;
+        }
+
+        .intro,
+        .star-sec {
+          grid-column: span 1;
+        }
+
+        .intro {
+          text-align: left;
+          padding-right: 5rem;
+        }
+
+        .intro h2 {
+          padding: 0 1rem 0 0;
+          font-size: 2.5rem;
+        }
+
+        .comment-sec {
+          grid-column: span 2;
+          display: flex;
+          gap: 1rem;
+        }
+
+        .star-sec {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .star-sec .item {
+          width: 80%;
+          display: flex;
+          align-items: center;
+          padding: 1rem 2rem;
+        }
+
+        .star-sec .item:nth-child(2) {
+          align-self: center;
+        }
+        .star-sec .item:nth-child(3) {
+          align-self: flex-end;
+        }
+
+        .star-sec .star-group {
+          margin: 0;
+          padding-right: 2rem;
+        }
+
+        .comment-sec {
+          /* background-color: green; */
+        }
+
+        .comment-sec {
+          margin-top: 5rem;
+        }
+
+        .comment-sec .item:nth-child(1) {
+          transform: translateY(-2rem);
+        }
+        .comment-sec .item:nth-child(2) {
+          transform: translateY(-1rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="sr-only">Social proof section</h1>
+    <main class="container">
+      <section class="intro">
+        <h2>10,000+ of our users love our products.</h2>
+        <p>
+          We only provide great products combined with excellent customer
+          service. See what our satisfied customers are saying about our
+          services.
+        </p>
+      </section>
+      <section class="star-sec">
+        <div class="item">
+          <div class="star-group">
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+          </div>
+          <h4>Rated 5 Stars in Reviews</h4>
+        </div>
+        <div class="item">
+          <div class="star-group">
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+          </div>
+          <h4>Rated 5 Stars in Report Guru</h4>
+        </div>
+        <div class="item">
+          <div class="star-group">
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+            <img src="/images/icon-star.svg" alt="" />
+          </div>
+          <h4>Rated 5 Stars in BestTech</h4>
+        </div>
+      </section>
+      <section class="comment-sec">
+        <div class="item">
+          <div class="profile">
+            <img src="/images/image-colton.jpg" alt="" class="picture" />
+            <div class="info">
+              <div class="name">Colton Smith</div>
+              <div class="id">Verified Buyer</div>
+            </div>
+          </div>
+          <p class="comment">
+            "We needed the same printed design as the one we had ordered a week
+            prior. Not only did they find the original order, but we also
+            received it in time. Excellent!"
+          </p>
+        </div>
+        <div class="item">
+          <div class="profile">
+            <img src="/images/image-irene.jpg" alt="" class="picture" />
+            <div class="info">
+              <div class="name">Irene Roberts</div>
+              <div class="id">Verified Buyer</div>
+            </div>
+          </div>
+          <p class="comment">
+            "Customer service is always excellent and very quick turn around.
+            Completely delighted with the simplicity of the purchase and the
+            speed of delivery."
+          </p>
+        </div>
+        <div class="item">
+          <div class="profile">
+            <img src="/images/image-anne.jpg" alt="" class="picture" />
+            <div class="info">
+              <div class="name">Anne Wallace</div>
+              <div class="id">Verified Buyer</div>
+            </div>
+          </div>
+          <p class="comment">
+            "Put an order with this company and can only praise them for the
+            very high standard. Will definitely use them again and recommend
+            them to everyone!"
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Joe Jai</a>.
+    </div>
+  </body>
+</html>
